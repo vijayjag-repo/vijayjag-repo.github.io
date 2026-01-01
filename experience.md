@@ -4,6 +4,7 @@ title: experience
 ---
 # $ git log --oneline
 
+&nbsp;
 
 * v5.0 [2025-Present] - Senior Software Engineer at Stealth startup
 * v2.0 [2022-2025]    - Software Engineer II at Stealth startup
