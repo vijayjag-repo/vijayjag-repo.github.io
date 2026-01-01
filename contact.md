@@ -2,15 +2,18 @@
 layout: default
 title: contact
 ---
-# user@vijayjag:~ $ cat /etc/contact.conf
+# user@vijayjag:~ $ cat /etc/network/contact.conf
 
-[SOCIAL]
-GITHUB   = https://github.com/vijayjag-repo
-LINKEDIN = [Your Link]
+[IDENTITY]
+USER     = vijayjag
+ROLE     = software_engineer
+EXP      = 5_years
 
-[NETWORK]
-EMAIL    = [Your Email]
-LOCATION = [Your City]
+[COMMUNICATION]
+EMAIL    = your.email@example.com
+LINKEDIN = linkedin.com/in/yourprofile
+GITHUB   = github.com/vijayjag-repo
 
-[AVAILABILITY]
-STATUS   = Listening for new connections...
+[LOCATION]
+ZONE     = GMT+5:30
+STATUS   = ONLINE
