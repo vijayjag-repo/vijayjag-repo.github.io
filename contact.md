@@ -7,7 +7,7 @@ title: contact
 [IDENTITY]
 USER     = Vijay Jagannathan
 ROLE     = Software Engineer
-EXP      = 5_years
+EXP      = ~5_years
 
 [COMMUNICATION]
 EMAIL    = vjagannathan07@example.com
