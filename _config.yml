@@ -1,0 +1,6 @@
+title: Vijay Jagadeesan
+remote_theme: carlosm2/jekyll-theme-console
+style: hacker
+
+plugins:
+  - jekyll-remote-theme
