@@ -4,5 +4,6 @@ title: about
 ---
 
 # $ whoami
-**Vijay Jagannathan** Software Engineer | 5+ Years Experience
+**Vijay Jagannathan** 
+Software Engineer | 5 Years Experience
 *Focusing on building scalable, high-performance systems.*
