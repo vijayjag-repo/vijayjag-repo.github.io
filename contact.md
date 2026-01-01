@@ -10,7 +10,7 @@ ROLE     = Software Engineer
 EXP      = 5+ years
 
 [COMMUNICATION]
-EMAIL    = vjagannathan07@example.com
+EMAIL    = vjagannathan07@gmail.com
 LINKEDIN = linkedin.com/in/vijayjagan
 GITHUB   = github.com/vijayjag-repo
 MOBILE   = +91-9840094473
