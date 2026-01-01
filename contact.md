@@ -5,13 +5,13 @@ title: contact
 # user@vijayjag:~ $ cat /etc/network/contact.conf
 
 [IDENTITY]
-USER     = vijayjag
-ROLE     = software_engineer
+USER     = Vijay Jagannathan
+ROLE     = Software Engineer
 EXP      = 5_years
 
 [COMMUNICATION]
-EMAIL    = your.email@example.com
-LINKEDIN = linkedin.com/in/yourprofile
+EMAIL    = vjagannathan07@example.com
+LINKEDIN = linkedin.com/in/vijayjagan
 GITHUB   = github.com/vijayjag-repo
 
 [LOCATION]
