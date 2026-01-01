@@ -1,6 +1,12 @@
-title: Vijay Jagadeesan
+title: Vijay Jagannathan
 remote_theme: carlosm2/jekyll-theme-console
 style: hacker
+
+# This creates the navigation menu in the top right
+header_pages:
+  - about.md
+  - skills.md
+  - projects.md
 
 plugins:
   - jekyll-remote-theme
