@@ -4,10 +4,9 @@ style: hacker
 
 # This creates the navigation menu in the top right
 header_pages:
-  - about.md
+  - experience.md
   - skills.md
   - projects.md
-  - experience.md
   - contact.md
 
 plugins:
