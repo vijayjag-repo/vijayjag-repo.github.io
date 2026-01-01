@@ -3,7 +3,7 @@ layout: default
 title: about
 ---
 
-#$ whoami
+# $ whoami
 
 **Vijay Jagannathan**
 Software Engineer | 5 Years Experience
