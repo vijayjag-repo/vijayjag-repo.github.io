@@ -8,4 +8,4 @@ title: about
 &nbsp;
 
 **Vijay Jagannathan** Software Engineer | 5 Years Experience
-Focusing on building scalable, high-performance systems.
+*Focusing on building scalable, high-performance systems.*
