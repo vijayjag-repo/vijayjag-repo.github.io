@@ -2,5 +2,8 @@
 layout: default
 title: projects
 ---
-# user@vijayjag:~ $ ls -la /projects
+# $ ls -la /projects
+
+&nbsp;
+
 (Project list coming soon...)
