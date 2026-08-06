@@ -54,7 +54,65 @@ body::before {
   to   { transform: translate3d(-2%, 2%, 0) scale(1.05); }
 }
 
+/* Faint fixed dot-grid — gives the black canvas depth without competing
+   with content. Purely decorative, so it sits behind everything at z-index 0. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(182, 255, 60, 0.16) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(120vmax 90vmax at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(120vmax 90vmax at 50% 0%, #000 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 a { color: inherit; text-decoration: none; }
+
+/* ---------------------------------------------------------------
+   Custom cursor — a lime dot + trailing ring. Desktop, fine-pointer
+   only; JS adds .has-custom-cursor to <html> before this applies.
+--------------------------------------------------------------- */
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 200;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  transition: opacity 0.2s var(--ease);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent);
+  opacity: 0.6;
+  transition: width 0.25s var(--ease), height 0.25s var(--ease),
+    border-color 0.25s var(--ease), opacity 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.cursor-ring.is-hovering {
+  width: 52px;
+  height: 52px;
+  background: var(--accent-soft);
+  opacity: 1;
+}
 
 ::selection {
   background: var(--accent);
@@ -153,6 +211,21 @@ a { color: inherit; text-decoration: none; }
 }
 .site-nav__indicator.is-active { opacity: 1; }
 
+/* A softer, blurred copy that trails behind the sharp indicator — same
+   position, slower transition, giving the glide a lit trailing edge. */
+.site-nav__indicator-glow {
+  position: absolute;
+  bottom: -3px;
+  height: 5px;
+  background: var(--accent);
+  filter: blur(5px);
+  border-radius: 3px;
+  opacity: 0;
+  transition: transform 0.7s var(--ease), width 0.7s var(--ease), opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+.site-nav__indicator-glow.is-active { opacity: 0.45; }
+
 @media (max-width: 560px) {
   .site-nav__inner { flex-direction: column; gap: 0.4rem; padding: 0.75rem 1rem; }
   .site-nav { height: auto; }
@@ -171,9 +244,31 @@ main {
 }
 
 .section {
+  position: relative;
   padding: 6rem 0;
   border-top: 1px solid var(--line);
   scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+/* Section divider motif: a small pulsing node centered on the border,
+   echoing the hero's node-graph artwork at every section break. */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px var(--accent-soft);
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.5s var(--ease);
+}
+.section.is-visible::before { transform: translateX(-50%) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .section::before { transform: translateX(-50%) scale(1); transition: none; }
 }
 
 .section__heading {
@@ -502,13 +597,34 @@ main {
 }
 
 .chip {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   color: var(--text);
   font-size: 0.85rem;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
+  overflow: hidden;
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+/* Ripple: a ring that expands from center on hover */
+.chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+.chip:hover::before {
+  animation: chip-ripple 0.6s var(--ease);
+}
+@keyframes chip-ripple {
+  from { opacity: 0.7; transform: scale(0.5); }
+  to   { opacity: 0; transform: scale(1.6); }
 }
 
 .skills .chip:hover {
@@ -538,14 +654,28 @@ main {
 }
 
 .project-card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 1.5rem;
+  overflow: hidden;
   transform-style: preserve-3d;
   perspective: 800px;
   transition: transform 0.35s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
+
+/* Spotlight that follows the cursor, positioned by --mx/--my set from JS */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), var(--accent-soft), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+.project-card:hover::after { opacity: 1; }
 
 .project-card:hover {
   border-color: var(--accent);

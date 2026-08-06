@@ -7,6 +7,7 @@
   var navLinks = Array.prototype.slice.call(document.querySelectorAll("[data-nav-link]"));
   var navList = document.querySelector(".site-nav__links");
   var indicator = document.getElementById("nav-indicator");
+  var indicatorGlow = document.getElementById("nav-indicator-glow");
   var sections = navLinks
     .map(function (link) {
       var id = link.getAttribute("href").slice(1);
@@ -18,9 +19,16 @@
     if (!indicator || !navList || !link) return;
     var listBox = navList.getBoundingClientRect();
     var linkBox = link.getBoundingClientRect();
-    indicator.style.width = linkBox.width + "px";
-    indicator.style.transform = "translateX(" + (linkBox.left - listBox.left) + "px)";
+    var width = linkBox.width + "px";
+    var offset = "translateX(" + (linkBox.left - listBox.left) + "px)";
+    indicator.style.width = width;
+    indicator.style.transform = offset;
     indicator.classList.add("is-active");
+    if (indicatorGlow) {
+      indicatorGlow.style.width = width;
+      indicatorGlow.style.transform = offset;
+      indicatorGlow.classList.add("is-active");
+    }
   }
 
   if (sections.length && "IntersectionObserver" in window) {
@@ -104,7 +112,7 @@
     });
   }
 
-  // --- Tilt: project cards lean toward the cursor -------------------------
+  // --- Tilt + spotlight: project cards lean toward the cursor and light up
   if (!reduceMotion && matchMedia("(hover: hover)").matches) {
     var tiltEls = Array.prototype.slice.call(document.querySelectorAll("[data-tilt]"));
     tiltEls.forEach(function (el) {
@@ -116,6 +124,10 @@
         var rotateY = (px * 8).toFixed(2);
         el.style.transform =
           "perspective(800px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
+        if (el.hasAttribute("data-spotlight")) {
+          el.style.setProperty("--mx", (e.clientX - box.left) + "px");
+          el.style.setProperty("--my", (e.clientY - box.top) + "px");
+        }
       });
       el.addEventListener("mouseleave", function () {
         el.style.transform = "";
@@ -197,6 +209,50 @@
         });
       }, { passive: true });
     }
+  }
+
+  // --- Custom cursor: lime dot + trailing ring, grows over interactive
+  // elements. Desktop with a fine pointer only; skipped under reduced motion
+  // since a trailing cursor is itself a motion effect.
+  if (!reduceMotion && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var dot = document.createElement("div");
+    dot.className = "cursor-dot";
+    var ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+    document.documentElement.classList.add("has-custom-cursor");
+
+    var ringX = 0, ringY = 0, targetX = 0, targetY = 0;
+
+    window.addEventListener("mousemove", function (e) {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      dot.style.transform = "translate(" + targetX + "px, " + targetY + "px) translate(-50%, -50%)";
+    });
+
+    (function follow() {
+      ringX += (targetX - ringX) * 0.18;
+      ringY += (targetY - ringY) * 0.18;
+      ring.style.transform = "translate(" + ringX + "px, " + ringY + "px) translate(-50%, -50%)";
+      requestAnimationFrame(follow);
+    })();
+
+    var HOVER_SELECTOR = "a, button, .chip, .project-card, [data-magnetic], [data-nav-link]";
+    document.addEventListener("mouseover", function (e) {
+      if (e.target.closest(HOVER_SELECTOR)) ring.classList.add("is-hovering");
+    });
+    document.addEventListener("mouseout", function (e) {
+      if (e.target.closest(HOVER_SELECTOR)) ring.classList.remove("is-hovering");
+    });
+    document.addEventListener("mouseleave", function () {
+      dot.style.opacity = "0";
+      ring.style.opacity = "0";
+    });
+    document.addEventListener("mouseenter", function () {
+      dot.style.opacity = "1";
+      ring.style.opacity = "0.6";
+    });
   }
 
   function mulberry32(seed) {
