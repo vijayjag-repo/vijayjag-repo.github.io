@@ -211,50 +211,6 @@
     }
   }
 
-  // --- Custom cursor: lime dot + trailing ring, grows over interactive
-  // elements. Desktop with a fine pointer only; skipped under reduced motion
-  // since a trailing cursor is itself a motion effect.
-  if (!reduceMotion && matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    var dot = document.createElement("div");
-    dot.className = "cursor-dot";
-    var ring = document.createElement("div");
-    ring.className = "cursor-ring";
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-    document.documentElement.classList.add("has-custom-cursor");
-
-    var ringX = 0, ringY = 0, targetX = 0, targetY = 0;
-
-    window.addEventListener("mousemove", function (e) {
-      targetX = e.clientX;
-      targetY = e.clientY;
-      dot.style.transform = "translate(" + targetX + "px, " + targetY + "px) translate(-50%, -50%)";
-    });
-
-    (function follow() {
-      ringX += (targetX - ringX) * 0.18;
-      ringY += (targetY - ringY) * 0.18;
-      ring.style.transform = "translate(" + ringX + "px, " + ringY + "px) translate(-50%, -50%)";
-      requestAnimationFrame(follow);
-    })();
-
-    var HOVER_SELECTOR = "a, button, .chip, .project-card, [data-magnetic], [data-nav-link]";
-    document.addEventListener("mouseover", function (e) {
-      if (e.target.closest(HOVER_SELECTOR)) ring.classList.add("is-hovering");
-    });
-    document.addEventListener("mouseout", function (e) {
-      if (e.target.closest(HOVER_SELECTOR)) ring.classList.remove("is-hovering");
-    });
-    document.addEventListener("mouseleave", function () {
-      dot.style.opacity = "0";
-      ring.style.opacity = "0";
-    });
-    document.addEventListener("mouseenter", function () {
-      dot.style.opacity = "1";
-      ring.style.opacity = "0.6";
-    });
-  }
-
   function mulberry32(seed) {
     return function () {
       seed |= 0;
