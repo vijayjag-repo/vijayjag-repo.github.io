@@ -150,6 +150,27 @@
     });
   }
 
+  /* --- Card glow + punk glitch -------------------------------------- */
+
+  if (finePointer && !reducedMotion) {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left).toFixed(1) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top).toFixed(1) + 'px');
+      });
+    });
+  }
+
+  var punk = document.querySelector('.hero__avatar');
+  if (punk && !reducedMotion) {
+    window.setInterval(function () {
+      punk.classList.add('glitching');
+      window.setTimeout(function () { punk.classList.remove('glitching'); }, 620);
+    }, 7000);
+  }
+
   /* --- Terminal card: tilt ------------------------------------------ */
 
   var tiltEl = document.querySelector('[data-tilt]');

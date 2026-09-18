@@ -306,6 +306,50 @@ body::after {
 html[data-theme="light"] .icon-sun { display: none; }
 html[data-theme="light"] .icon-moon { display: block; }
 
+/* Skills ticker strip (full-bleed) */
+.ticker {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+
+.ticker:hover .ticker__track { animation-play-state: paused; }
+
+.ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 0.85rem 1.125rem;
+}
+
+.ticker__group > span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.ticker__group > i {
+  color: var(--accent);
+  font-style: normal;
+  font-size: 0.55rem;
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
 /* ---------------------------------------------------------------
    Layout
 --------------------------------------------------------------- */
@@ -404,6 +448,20 @@ main {
   margin: 0 0 1.6rem;
 }
 
+/* Punk glitch: RGB-split jitter on hover / periodic idle blip */
+.hero__avatar.glitching,
+.hero__avatar:hover {
+  animation: glitch 0.3s steps(2, end) 2;
+}
+
+@keyframes glitch {
+  0%  { filter: none; transform: translate(0, 0); }
+  25% { filter: drop-shadow(2px 0 rgba(255, 59, 92, 0.55)) drop-shadow(-2px 0 rgba(0, 210, 255, 0.55)); transform: translate(1px, -1px); }
+  50% { filter: drop-shadow(-2px 0 rgba(255, 59, 92, 0.55)) drop-shadow(2px 0 rgba(0, 210, 255, 0.55)); transform: translate(-1px, 1px); }
+  75% { filter: none; transform: translate(1px, 1px); }
+  100% { filter: none; transform: translate(0, 0); }
+}
+
 .hero__status {
   display: inline-flex;
   align-items: center;
@@ -436,12 +494,19 @@ main {
 
 .hero__name {
   font-size: clamp(3rem, 7vw, 5.4rem);
-  line-height: 1.02;
-  margin: 0 0 1.6rem;
-  background: linear-gradient(115deg, var(--name-a) 45%, var(--name-b) 95%);
+  line-height: 1.12;
+  padding-bottom: 0.12em; /* keeps descenders inside the gradient box */
+  margin: 0 0 1.15rem;
+  background: linear-gradient(115deg, var(--name-a) 40%, var(--name-b) 50%, var(--name-a) 60%);
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@keyframes sheen {
+  0%, 55% { background-position: 100% 0; }
+  90%, 100% { background-position: 0% 0; }
 }
 
 .hero__pitch {
@@ -482,7 +547,7 @@ main {
 
 .hero__avatar { animation: rise 0.7s var(--ease) 0.05s backwards; }
 .hero__status { animation: rise 0.7s var(--ease) 0.12s backwards; }
-.hero__name   { animation: rise 0.7s var(--ease) 0.2s backwards; }
+.hero__name   { animation: rise 0.7s var(--ease) 0.2s backwards, sheen 9s ease-in-out 1.2s infinite; }
 .hero__pitch  { animation: rise 0.7s var(--ease) 0.3s backwards; }
 .hero__links  { animation: rise 0.7s var(--ease) 0.4s backwards; }
 .hero__panel  { animation: rise 0.8s var(--ease) 0.35s backwards; }
@@ -600,6 +665,20 @@ main {
   padding: 1.6rem 1.8rem 1.7rem;
   transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
+
+/* Mouse-tracking glow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), var(--glow-a), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+
+.card:hover::before { opacity: 1; }
 
 .card:hover {
   border-color: var(--hover-line);
@@ -843,4 +922,7 @@ main {
   .site-nav__indicator { transition: none; }
   .spotlight { display: none; }
   .card, .btn, .chips li, .theme-toggle { transition: none; }
+  .ticker__track { animation: none; }
+  .card::before { display: none; }
+  .hero__avatar:hover, .hero__avatar.glitching { animation: none; }
 }
