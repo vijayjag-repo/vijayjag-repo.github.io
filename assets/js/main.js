@@ -150,7 +150,7 @@
     });
   }
 
-  /* --- Card glow + punk glitch -------------------------------------- */
+  /* --- Card glow ----------------------------------------------------- */
 
   if (finePointer && !reducedMotion) {
     var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
@@ -161,14 +161,6 @@
         card.style.setProperty('--my', (e.clientY - r.top).toFixed(1) + 'px');
       });
     });
-  }
-
-  var punk = document.querySelector('.hero__avatar');
-  if (punk && !reducedMotion) {
-    window.setInterval(function () {
-      punk.classList.add('glitching');
-      window.setTimeout(function () { punk.classList.remove('glitching'); }, 620);
-    }, 7000);
   }
 
   /* --- Terminal card: tilt ------------------------------------------ */

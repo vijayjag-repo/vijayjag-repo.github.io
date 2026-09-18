@@ -18,10 +18,9 @@ Plain static HTML/CSS/JS — no build step, no framework, deployed as-is by GitH
   link in the header.
 - **Replace role descriptions**: the current one-liners are intentionally generic
   (stealth work is under NDA). Swap in real bullets when you're ready.
-- **Swap the photo**: `assets/img/avatar-punk.png` is the pixel-art avatar
-  (regenerate it from `assets/img/profile.jpg` — 24×24 quantize, punk-blue
-  `#638596` background, NEAREST upscale). `avatar-64.png` is the favicon;
-  `avatar.jpg`/`profile.jpg` are the original photo.
+- **Swap the photo**: `assets/img/avatar.jpg` is the hero avatar (512px square,
+  face-centered crop), `assets/img/profile.jpg` is the social-share preview,
+  and `avatar-64.png` is the favicon generated from the avatar.
 - **Theme**: dark is the default; a toggle in the nav switches to the light
   theme and persists via `localStorage`. First visit follows the OS setting.
   Both palettes are tokens at the top of `main.css`.
