@@ -18,6 +18,9 @@ Plain static HTML/CSS/JS — no build step, no framework, deployed as-is by GitH
   link in the header.
 - **Replace role descriptions**: the current one-liners are intentionally generic
   (stealth work is under NDA). Swap in real bullets when you're ready.
+- **Swap the photo**: replace `assets/img/avatar.jpg` (square) and
+  `assets/img/profile.jpg` (used for social-share previews); `avatar-64.png`
+  is the favicon.
 - **Tune the palette**: every color is a token in `:root` of `main.css`.
 - **Preview locally**: `python3 -m http.server 8000` from the repo root, then open
   `http://localhost:8000`.

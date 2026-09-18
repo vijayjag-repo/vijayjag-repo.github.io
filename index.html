@@ -10,11 +10,13 @@
 <meta property="og:title" content="Vijay Jagannathan — Software Engineer">
 <meta property="og:description" content="Software engineer in Bangalore building scalable, distributed systems.">
 <meta property="og:url" content="https://vijayjag-repo.github.io/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://vijayjag-repo.github.io/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Vijay Jagannathan — Software Engineer">
 <meta name="twitter:description" content="Software engineer in Bangalore building scalable, distributed systems.">
+<meta name="twitter:image" content="https://vijayjag-repo.github.io/assets/img/profile.jpg">
 
-<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="assets/img/avatar-64.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +36,7 @@
   "jobTitle": "Senior Software Engineer",
   "email": "mailto:vjagannathan07@gmail.com",
   "url": "https://vijayjag-repo.github.io/",
+  "image": "https://vijayjag-repo.github.io/assets/img/avatar.jpg",
   "sameAs": [
     "https://www.linkedin.com/in/vijayjagan",
     "https://github.com/vijayjag-repo"
@@ -50,9 +53,12 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
 <header class="site-nav">
   <nav class="site-nav__inner" aria-label="Primary">
-    <a class="site-nav__name" href="#top">Vijay Jagannathan</a>
+    <a class="site-nav__name" href="#top"><span class="site-nav__mark" aria-hidden="true"></span>Vijay Jagannathan</a>
     <ul class="site-nav__links">
       <span class="site-nav__indicator" aria-hidden="true"></span>
       <li><a href="#about" data-nav-link>About</a></li>
@@ -66,8 +72,9 @@
 <main id="main">
 
   <section class="hero" id="top">
-    <div class="hero__text" data-reveal>
-      <p class="hero__eyebrow">Software Engineer &mdash; Bangalore, India</p>
+    <div class="hero__text">
+      <img class="hero__avatar" src="assets/img/avatar.jpg" alt="Vijay Jagannathan" width="512" height="512">
+      <p class="hero__status"><span class="hero__status-dot" aria-hidden="true"></span>Open to interesting work</p>
       <h1 class="hero__name">Vijay Jagannathan</h1>
       <p class="hero__pitch">I build scalable, distributed systems &mdash; currently at a stealth startup, previously at AWS. Five-plus years turning hard infrastructure problems into things people don&rsquo;t have to think about.</p>
       <div class="hero__links">
@@ -76,24 +83,28 @@
         <a href="https://linkedin.com/in/vijayjagan" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <dl class="hero__meta" data-reveal>
-      <div class="hero__meta-row">
-        <dt>Now</dt>
-        <dd>Senior Software Engineer, stealth startup</dd>
+
+    <div class="hero__panel">
+      <div class="term" data-tilt>
+        <div class="term__bar">
+          <span class="term__dot term__dot--r" aria-hidden="true"></span>
+          <span class="term__dot term__dot--y" aria-hidden="true"></span>
+          <span class="term__dot term__dot--g" aria-hidden="true"></span>
+          <span class="term__title">vijay@bangalore ~</span>
+        </div>
+        <div class="term__body">
+          <div class="term__line"><span class="term__ps" aria-hidden="true">&#10095;</span> <span class="term__cmd" data-type>whoami</span></div>
+          <p class="term__out">vijay jagannathan &mdash; senior software engineer</p>
+          <div class="term__line"><span class="term__ps" aria-hidden="true">&#10095;</span> <span class="term__cmd" data-type>cat focus.txt</span></div>
+          <p class="term__out">scalable, distributed systems &mdash; the kind nobody has to think about</p>
+          <div class="term__line"><span class="term__ps" aria-hidden="true">&#10095;</span> <span class="term__cmd" data-type>whereami</span></div>
+          <p class="term__out">Bangalore &middot; GMT+5:30 &mdash; previously AWS</p>
+          <div class="term__line"><span class="term__ps" aria-hidden="true">&#10095;</span> <span class="term__cmd" data-type>contact --fastest</span></div>
+          <p class="term__out"><a href="mailto:vjagannathan07@gmail.com">vjagannathan07@gmail.com</a></p>
+          <div class="term__line term__line--live"><span class="term__ps" aria-hidden="true">&#10095;</span> <span class="term__rest"></span></div>
+        </div>
       </div>
-      <div class="hero__meta-row">
-        <dt>Previously</dt>
-        <dd>AWS</dd>
-      </div>
-      <div class="hero__meta-row">
-        <dt>Focus</dt>
-        <dd>Distributed systems &amp; infrastructure</dd>
-      </div>
-      <div class="hero__meta-row">
-        <dt>Base</dt>
-        <dd>Bangalore &middot; GMT+5:30</dd>
-      </div>
-    </dl>
+    </div>
   </section>
 
   <section class="section" id="about" data-reveal>
@@ -106,32 +117,26 @@
 
   <section class="section" id="experience" data-reveal>
     <h2 class="section__heading"><span class="section__index">02</span>Experience</h2>
-    <ol class="roles">
-      <li class="role">
-        <span class="role__date">2025 &mdash; Present</span>
-        <div class="role__body">
-          <h3 class="role__title">Senior Software Engineer</h3>
-          <p class="role__org">Stealth Startup</p>
-          <p class="role__desc">Leading core infrastructure work. Specifics are under NDA &mdash; happy to walk through them in a conversation.</p>
-        </div>
+    <ol class="cards">
+      <li class="card">
+        <span class="card__date">2025 &mdash; Present</span>
+        <h3 class="card__title">Senior Software Engineer</h3>
+        <p class="card__org">Stealth Startup</p>
+        <p class="card__desc">Leading core infrastructure work. Specifics are under NDA &mdash; happy to walk through them in a conversation.</p>
       </li>
-      <li class="role">
-        <span class="role__date">2022 &mdash; 2025</span>
-        <div class="role__body">
-          <h3 class="role__title">Software Engineer II</h3>
-          <p class="role__org">Stealth Startup</p>
-          <p class="role__desc">Three years building and shipping core product infrastructure as the team grew.</p>
-        </div>
+      <li class="card">
+        <span class="card__date">2022 &mdash; 2025</span>
+        <h3 class="card__title">Software Engineer II</h3>
+        <p class="card__org">Stealth Startup</p>
+        <p class="card__desc">Three years building and shipping core product infrastructure as the team grew.</p>
       </li>
-      <li class="role">
-        <span class="role__date">2020 &mdash; 2022</span>
-        <div class="role__body">
-          <h3 class="role__title">Software Development Engineer I</h3>
-          <p class="role__org">AWS</p>
-          <p class="role__desc">Built and operated large-scale distributed services &mdash; and learned what operational excellence actually costs.</p>
-        </div>
+      <li class="card">
+        <span class="card__date">2020 &mdash; 2022</span>
+        <h3 class="card__title">Software Development Engineer I</h3>
+        <p class="card__org">AWS</p>
+        <p class="card__desc">Built and operated large-scale distributed services &mdash; and learned what operational excellence actually costs.</p>
       </li>
-      <!-- Add a role: copy a <li class="role"> block above. -->
+      <!-- Add a role: copy a <li class="card"> block above. -->
     </ol>
   </section>
 
@@ -140,19 +145,34 @@
     <div class="skills">
       <div class="skills__group">
         <h3 class="skills__label">Languages</h3>
-        <p class="skills__items">Go, Python, TypeScript, Java</p>
+        <ul class="chips">
+          <li>Go</li>
+          <li>Python</li>
+          <li>TypeScript</li>
+          <li>Java</li>
+        </ul>
       </div>
       <div class="skills__group">
         <h3 class="skills__label">Frameworks</h3>
-        <p class="skills__items">Node.js</p>
+        <ul class="chips">
+          <li>Node.js</li>
+        </ul>
       </div>
       <div class="skills__group">
         <h3 class="skills__label">Cloud &amp; Ops</h3>
-        <p class="skills__items">AWS, Docker, Kubernetes</p>
+        <ul class="chips">
+          <li>AWS</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+        </ul>
       </div>
       <div class="skills__group">
         <h3 class="skills__label">Databases</h3>
-        <p class="skills__items">MongoDB, Redis, DynamoDB</p>
+        <ul class="chips">
+          <li>MongoDB</li>
+          <li>Redis</li>
+          <li>DynamoDB</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -162,13 +182,11 @@
 
     <section class="section" id="projects" data-reveal>
       <h2 class="section__heading"><span class="section__index">04</span>Projects</h2>
-      <ol class="roles">
-        <li class="role">
-          <span class="role__date">Go</span>
-          <div class="role__body">
-            <h3 class="role__title"><a href="https://github.com/vijayjag-repo/turbo-load-balancer" target="_blank" rel="noopener">turbo-load-balancer</a></h3>
-            <p class="role__desc">One-line description of what it does and why it exists.</p>
-          </div>
+      <ol class="cards">
+        <li class="card">
+          <span class="card__date">Go</span>
+          <h3 class="card__title"><a href="https://github.com/vijayjag-repo/turbo-load-balancer" target="_blank" rel="noopener">turbo-load-balancer</a></h3>
+          <p class="card__desc">One-line description of what it does and why it exists.</p>
         </li>
       </ol>
     </section>
@@ -176,16 +194,23 @@
 
   <section class="section section--contact" id="contact" data-reveal>
     <h2 class="section__heading"><span class="section__index">04</span>Contact</h2>
-    <p class="contact__lede">The fastest way to reach me is email &mdash; I read everything.</p>
-    <a class="contact__email" href="mailto:vjagannathan07@gmail.com">vjagannathan07@gmail.com</a>
+    <p class="contact__lede">Let&rsquo;s build something worth maintaining.</p>
+    <div class="contact__actions">
+      <a class="btn btn--primary" href="mailto:vjagannathan07@gmail.com">vjagannathan07@gmail.com <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn" href="https://github.com/vijayjag-repo" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/vijayjagan" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Vijay Jagannathan</p>
-  <p>Bangalore, India</p>
-  <a href="https://github.com/vijayjag-repo/vijayjag-repo.github.io" target="_blank" rel="noopener">Source</a>
+  <p class="site-footer__ghost" aria-hidden="true">VIJAY</p>
+  <div class="site-footer__row">
+    <p>&copy; 2026 Vijay Jagannathan</p>
+    <p>Bangalore, India</p>
+    <a href="https://github.com/vijayjag-repo/vijayjag-repo.github.io" target="_blank" rel="noopener">Source</a>
+  </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
