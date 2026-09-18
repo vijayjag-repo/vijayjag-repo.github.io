@@ -125,6 +125,31 @@
     }, { passive: true });
   }
 
+  /* --- Theme toggle -------------------------------------------------- */
+
+  var themeBtn = document.getElementById('theme-toggle');
+  var metaTheme = document.getElementById('meta-theme');
+
+  function applyTheme(next) {
+    document.documentElement.setAttribute('data-theme', next);
+    if (metaTheme) metaTheme.setAttribute('content', next === 'light' ? '#f4efe6' : '#0c0b09');
+    if (themeBtn) {
+      themeBtn.setAttribute('aria-label', next === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      if (document.startViewTransition && !reducedMotion) {
+        document.startViewTransition(function () { applyTheme(next); });
+      } else {
+        applyTheme(next);
+      }
+    });
+  }
+
   /* --- Terminal card: tilt ------------------------------------------ */
 
   var tiltEl = document.querySelector('[data-tilt]');
