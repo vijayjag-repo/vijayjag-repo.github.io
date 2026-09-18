@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vijay Jagannathan — Software Engineer</title>
-<meta name="description" content="Vijay Jagannathan is a software engineer in Bangalore building scalable, distributed systems.">
+<meta name="description" content="Vijay Jagannathan is a software engineer in Bangalore building scalable, distributed systems — currently at a stealth startup, previously at AWS.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vijay Jagannathan — Software Engineer">
@@ -18,11 +18,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- display=optional: fonts apply instantly if already cached, otherwise the
-     page keeps its fallback font rather than reflowing (and scroll-jumping)
-     once the webfont arrives mid-read. -->
+<!-- display=optional: fonts apply instantly if cached, otherwise the page keeps
+     its fallback font rather than reflowing once the webfont arrives. -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=optional" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=optional" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/main.css">
 
@@ -31,8 +31,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Vijay Jagannathan Thirumalai Parthasarathy",
-  "jobTitle": "Software Engineer",
-  "email": "vjagannathan07@gmail.com",
+  "jobTitle": "Senior Software Engineer",
+  "email": "mailto:vjagannathan07@gmail.com",
   "url": "https://vijayjag-repo.github.io/",
   "sameAs": [
     "https://www.linkedin.com/in/vijayjagan",
@@ -50,184 +50,142 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-nav" id="site-nav">
-  <nav class="site-nav__inner">
-    <a class="site-nav__name" href="#hero">Vijay Jagannathan</a>
+<header class="site-nav">
+  <nav class="site-nav__inner" aria-label="Primary">
+    <a class="site-nav__name" href="#top">Vijay Jagannathan</a>
     <ul class="site-nav__links">
-      <span class="site-nav__indicator-glow" id="nav-indicator-glow" aria-hidden="true"></span>
-      <span class="site-nav__indicator" id="nav-indicator" aria-hidden="true"></span>
+      <span class="site-nav__indicator" aria-hidden="true"></span>
       <li><a href="#about" data-nav-link>About</a></li>
       <li><a href="#experience" data-nav-link>Experience</a></li>
       <li><a href="#skills" data-nav-link>Skills</a></li>
-      <li><a href="#projects" data-nav-link>Projects</a></li>
+      <li><a href="#contact" data-nav-link>Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main id="main">
 
-  <section class="hero" id="hero">
-    <div class="hero__text">
-      <h1 class="hero__name">
-        <span class="hero__name-line"><span class="w">Vijay</span> <span class="w">Jagannathan</span></span>
-        <span class="hero__name-line"><span class="w">Thirumalai</span> <span class="w">Parthasarathy</span></span>
-      </h1>
-      <span class="hero__rule" aria-hidden="true"></span>
-      <p class="hero__role"><span id="typewriter"></span><span class="hero__cursor" aria-hidden="true"></span></p>
-      <p class="hero__pitch">I build scalable, distributed systems — currently at a stealth startup, previously at AWS. Five-plus years turning hard infrastructure problems into things people don't have to think about.</p>
+  <section class="hero" id="top">
+    <div class="hero__text" data-reveal>
+      <p class="hero__eyebrow">Software Engineer &mdash; Bangalore, India</p>
+      <h1 class="hero__name">Vijay Jagannathan</h1>
+      <p class="hero__pitch">I build scalable, distributed systems &mdash; currently at a stealth startup, previously at AWS. Five-plus years turning hard infrastructure problems into things people don&rsquo;t have to think about.</p>
       <div class="hero__links">
-        <a href="mailto:vjagannathan07@gmail.com" class="link-arrow" data-magnetic>Email</a>
-        <a href="https://github.com/vijayjag-repo" class="link-arrow" target="_blank" rel="noopener" data-magnetic>GitHub</a>
-        <a href="https://linkedin.com/in/vijayjagan" class="link-arrow" target="_blank" rel="noopener" data-magnetic>LinkedIn</a>
+        <a href="mailto:vjagannathan07@gmail.com">Email</a>
+        <a href="https://github.com/vijayjag-repo" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/vijayjagan" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="hero__art" id="hero-art" aria-hidden="true"></div>
+    <dl class="hero__meta" data-reveal>
+      <div class="hero__meta-row">
+        <dt>Now</dt>
+        <dd>Senior Software Engineer, stealth startup</dd>
+      </div>
+      <div class="hero__meta-row">
+        <dt>Previously</dt>
+        <dd>AWS</dd>
+      </div>
+      <div class="hero__meta-row">
+        <dt>Focus</dt>
+        <dd>Distributed systems &amp; infrastructure</dd>
+      </div>
+      <div class="hero__meta-row">
+        <dt>Base</dt>
+        <dd>Bangalore &middot; GMT+5:30</dd>
+      </div>
+    </dl>
   </section>
 
   <section class="section" id="about" data-reveal>
-    <h2 class="section__heading"><span class="section__index">01</span> About</h2>
+    <h2 class="section__heading"><span class="section__index">01</span>About</h2>
     <div class="section__body">
-      <p>I'm a software engineer with over five years of experience, most recently as a Senior Software Engineer at a stealth-mode startup. I started my career at AWS, where I learned how to build and operate systems at a scale that punishes shortcuts.</p>
-      <p class="todo">Add a short personal paragraph — interests outside work, how you approach engineering, what you're currently learning.</p>
+      <p>I&rsquo;m a software engineer with over five years of experience, most recently as a Senior Software Engineer at a stealth-mode startup. I started my career at AWS, where I learned to build and operate systems at a scale that punishes shortcuts.</p>
+      <p>I care about the unglamorous parts of engineering &mdash; clear interfaces, boring failure modes, systems that tell you the truth when something is wrong. The best infrastructure is the kind nobody has to think about.</p>
     </div>
   </section>
 
   <section class="section" id="experience" data-reveal>
-    <h2 class="section__heading"><span class="section__index">02</span> Experience</h2>
-    <ol class="timeline">
-      <li class="timeline__item">
-        <div class="timeline__meta">
-          <span class="timeline__dot" aria-hidden="true"></span>
-          <span class="timeline__date">2025 — Present</span>
-        </div>
-        <div class="timeline__content">
-          <h3 class="timeline__role">Senior Software Engineer</h3>
-          <p class="timeline__org">Stealth Startup</p>
-          <ul class="timeline__bullets">
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-          </ul>
+    <h2 class="section__heading"><span class="section__index">02</span>Experience</h2>
+    <ol class="roles">
+      <li class="role">
+        <span class="role__date">2025 &mdash; Present</span>
+        <div class="role__body">
+          <h3 class="role__title">Senior Software Engineer</h3>
+          <p class="role__org">Stealth Startup</p>
+          <p class="role__desc">Leading core infrastructure work. Specifics are under NDA &mdash; happy to walk through them in a conversation.</p>
         </div>
       </li>
-      <li class="timeline__item">
-        <div class="timeline__meta">
-          <span class="timeline__dot" aria-hidden="true"></span>
-          <span class="timeline__date">2022 — 2025</span>
-        </div>
-        <div class="timeline__content">
-          <h3 class="timeline__role">Software Engineer II</h3>
-          <p class="timeline__org">Stealth Startup</p>
-          <ul class="timeline__bullets">
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-          </ul>
+      <li class="role">
+        <span class="role__date">2022 &mdash; 2025</span>
+        <div class="role__body">
+          <h3 class="role__title">Software Engineer II</h3>
+          <p class="role__org">Stealth Startup</p>
+          <p class="role__desc">Three years building and shipping core product infrastructure as the team grew.</p>
         </div>
       </li>
-      <li class="timeline__item">
-        <div class="timeline__meta">
-          <span class="timeline__dot" aria-hidden="true"></span>
-          <span class="timeline__date">2020 — 2022</span>
-        </div>
-        <div class="timeline__content">
-          <h3 class="timeline__role">Software Development Engineer I</h3>
-          <p class="timeline__org">AWS</p>
-          <ul class="timeline__bullets">
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-            <li class="todo">Impact bullet — what you own, at what scale, with what outcome.</li>
-          </ul>
+      <li class="role">
+        <span class="role__date">2020 &mdash; 2022</span>
+        <div class="role__body">
+          <h3 class="role__title">Software Development Engineer I</h3>
+          <p class="role__org">AWS</p>
+          <p class="role__desc">Built and operated large-scale distributed services &mdash; and learned what operational excellence actually costs.</p>
         </div>
       </li>
-      <!-- template: copy a <li class="timeline__item"> block above for a new role -->
+      <!-- Add a role: copy a <li class="role"> block above. -->
     </ol>
   </section>
 
   <section class="section" id="skills" data-reveal>
-    <h2 class="section__heading"><span class="section__index">03</span> Skills</h2>
+    <h2 class="section__heading"><span class="section__index">03</span>Skills</h2>
     <div class="skills">
       <div class="skills__group">
         <h3 class="skills__label">Languages</h3>
-        <ul class="chips">
-          <li class="chip">Go</li>
-          <li class="chip">Python</li>
-          <li class="chip">TypeScript</li>
-          <li class="chip">Java</li>
-        </ul>
+        <p class="skills__items">Go, Python, TypeScript, Java</p>
       </div>
       <div class="skills__group">
         <h3 class="skills__label">Frameworks</h3>
-        <ul class="chips">
-          <li class="chip">Node.js</li>
-        </ul>
+        <p class="skills__items">Node.js</p>
       </div>
       <div class="skills__group">
         <h3 class="skills__label">Cloud &amp; Ops</h3>
-        <ul class="chips">
-          <li class="chip">AWS</li>
-          <li class="chip">Docker</li>
-          <li class="chip">Kubernetes</li>
-        </ul>
+        <p class="skills__items">AWS, Docker, Kubernetes</p>
       </div>
       <div class="skills__group">
-        <h3 class="skills__label">Database</h3>
-        <ul class="chips">
-          <li class="chip">MongoDB</li>
-          <li class="chip">Redis</li>
-          <li class="chip">DynamoDB</li>
-        </ul>
+        <h3 class="skills__label">Databases</h3>
+        <p class="skills__items">MongoDB, Redis, DynamoDB</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="projects" data-reveal>
-    <h2 class="section__heading"><span class="section__index">04</span> Projects</h2>
-    <div class="projects">
-      <article class="project-card" data-tilt data-spotlight>
-        <h3 class="project-card__title todo">Project name</h3>
-        <p class="project-card__desc todo">One-line description of what it does and why it exists.</p>
-        <ul class="chips chips--tight">
-          <li class="chip chip--tag">tech</li>
-          <li class="chip chip--tag">tag</li>
-        </ul>
-        <div class="project-card__links">
-          <a href="#" class="link-arrow" data-magnetic>Code</a>
-          <a href="#" class="link-arrow" data-magnetic>Live</a>
-        </div>
-      </article>
-      <article class="project-card" data-tilt data-spotlight>
-        <h3 class="project-card__title todo">Project name</h3>
-        <p class="project-card__desc todo">One-line description of what it does and why it exists.</p>
-        <ul class="chips chips--tight">
-          <li class="chip chip--tag">tech</li>
-          <li class="chip chip--tag">tag</li>
-        </ul>
-        <div class="project-card__links">
-          <a href="#" class="link-arrow" data-magnetic>Code</a>
-        </div>
-      </article>
-      <article class="project-card" data-tilt data-spotlight>
-        <h3 class="project-card__title todo">Project name</h3>
-        <p class="project-card__desc todo">One-line description of what it does and why it exists.</p>
-        <ul class="chips chips--tight">
-          <li class="chip chip--tag">tech</li>
-          <li class="chip chip--tag">tag</li>
-        </ul>
-        <div class="project-card__links">
-          <a href="#" class="link-arrow" data-magnetic>Code</a>
-        </div>
-      </article>
-      <!-- template: copy an <article class="project-card" data-tilt data-spotlight> block above for a new project -->
-    </div>
+  <!--
+    Projects section — uncomment and edit when ready. One block per project:
+
+    <section class="section" id="projects" data-reveal>
+      <h2 class="section__heading"><span class="section__index">04</span>Projects</h2>
+      <ol class="roles">
+        <li class="role">
+          <span class="role__date">Go</span>
+          <div class="role__body">
+            <h3 class="role__title"><a href="https://github.com/vijayjag-repo/turbo-load-balancer" target="_blank" rel="noopener">turbo-load-balancer</a></h3>
+            <p class="role__desc">One-line description of what it does and why it exists.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  -->
+
+  <section class="section section--contact" id="contact" data-reveal>
+    <h2 class="section__heading"><span class="section__index">04</span>Contact</h2>
+    <p class="contact__lede">The fastest way to reach me is email &mdash; I read everything.</p>
+    <a class="contact__email" href="mailto:vjagannathan07@gmail.com">vjagannathan07@gmail.com</a>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="site-footer__links">
-    <a href="mailto:vjagannathan07@gmail.com" class="link-arrow">vjagannathan07@gmail.com</a>
-    <a href="https://github.com/vijayjag-repo" class="link-arrow" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://linkedin.com/in/vijayjagan" class="link-arrow" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-  <p class="site-footer__note">Bangalore, India &middot; GMT+5:30</p>
+  <p>&copy; 2026 Vijay Jagannathan</p>
+  <p>Bangalore, India</p>
+  <a href="https://github.com/vijayjag-repo/vijayjag-repo.github.io" target="_blank" rel="noopener">Source</a>
 </footer>
 
 <script src="assets/js/main.js"></script>
